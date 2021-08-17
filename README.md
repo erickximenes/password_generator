@@ -1,6 +1,11 @@
 <div id="inicio"></div>
 
 ## 📱🖥 Password Generator
+Desktop - Windows:
+
+<img src="https://i.imgur.com/ai9eZQr.png" height="300em">
+
+Mobile:
 
 <img src="https://i.imgur.com/Ckdwrj6.jpg" height="300em"> <img src="https://i.imgur.com/xBnZRED.jpg" height="300em"> <img src="https://i.imgur.com/76yGx6o.jpg" height="300em">
 > Um sistema bem simples de geração de senha. Funciona em dektop Windows e dispositivos mobile. 
