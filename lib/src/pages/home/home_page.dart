@@ -29,116 +29,121 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) => Scaffold(
         body: SafeArea(
           minimum: EdgeInsets.only(top: 50),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 32),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                TitleRow(title: "Configurações da senha"),
-                Row(
+          child: ListView(
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 32),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('Letras'),
-                    Checkbox(
-                      checkColor: Colors.white,
-                      activeColor: Colors.cyan,
-                      value: this.valuestring,
-                      onChanged: (value) {
-                        setState(() {
-                          this.valuestring = value!;
-                        });
+                    TitleRow(title: "Configurações da senha"),
+                    Row(
+                      children: [
+                        Text('Letras'),
+                        Checkbox(
+                          checkColor: Colors.white,
+                          activeColor: Colors.cyan,
+                          value: this.valuestring,
+                          onChanged: (value) {
+                            setState(() {
+                              this.valuestring = value!;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text('Números'),
+                        Checkbox(
+                          checkColor: Colors.white,
+                          activeColor: Colors.cyan,
+                          value: this.valuenumber,
+                          onChanged: (value) {
+                            setState(() {
+                              this.valuenumber = value!;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text('Caracteres especiais'),
+                        Checkbox(
+                          checkColor: Colors.white,
+                          activeColor: Colors.cyan,
+                          value: this.valuespecial,
+                          onChanged: (value) {
+                            setState(() {
+                              this.valuespecial = value!;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 30),
+                    TitleRow(title: "Tamanho da senha:"),
+                    TextFormField(
+                      controller: _length,
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.allow(RegExp('[0-9.,]')),
+                      ],
+                      validator: (value) {
+                        if (value!.isNotEmpty) {
+                          return "Coloque um valor maior que 0";
+                        }
+                        return null;
                       },
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text('Números'),
-                    Checkbox(
-                      checkColor: Colors.white,
-                      activeColor: Colors.cyan,
-                      value: this.valuenumber,
-                      onChanged: (value) {
-                        setState(() {
-                          this.valuenumber = value!;
-                        });
-                      },
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text('Caracteres especiais'),
-                    Checkbox(
-                      checkColor: Colors.white,
-                      activeColor: Colors.cyan,
-                      value: this.valuespecial,
-                      onChanged: (value) {
-                        setState(() {
-                          this.valuespecial = value!;
-                        });
-                      },
-                    ),
-                  ],
-                ),
-                SizedBox(height: 30),
-                TitleRow(title: "Tamanho da senha:"),
-                TextFormField(
-                  controller: _length,
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [
-                    FilteringTextInputFormatter.allow(RegExp('[0-9.,]')),
-                  ],
-                  validator: (value) {
-                    if (value!.isNotEmpty) {
-                      return "Coloque um valor maior que 0";
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.cyan,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.cyan),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 15),
-                buildButtonWidget(),
-                SizedBox(height: 30),
-                TitleRow(title: "Sua senha gerada"),
-                TextFormField(
-                  controller: _controller,
-                  readOnly: true,
-                  enableInteractiveSelection: false,
-                  decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.cyan,
+                      decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.cyan),
                         ),
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.cyan),
-                      ),
-                      suffixIcon: IconButton(
-                          onPressed: () {
-                            final data = ClipboardData(text: _controller.text);
-                            Clipboard.setData(data);
+                    ),
+                    SizedBox(height: 15),
+                    buildButtonWidget(),
+                    SizedBox(height: 30),
+                    TitleRow(title: "Sua senha gerada"),
+                    TextFormField(
+                      controller: _controller,
+                      readOnly: true,
+                      enableInteractiveSelection: false,
+                      decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.cyan,
+                            ),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.cyan),
+                          ),
+                          suffixIcon: IconButton(
+                              onPressed: () {
+                                final data =
+                                    ClipboardData(text: _controller.text);
+                                Clipboard.setData(data);
 
-                            final snackbar =
-                                SnackBar(content: Text("Senha copiada"));
+                                final snackbar =
+                                    SnackBar(content: Text("Senha copiada"));
 
-                            ScaffoldMessenger.of(context)
-                              ..removeCurrentSnackBar()
-                              ..showSnackBar(snackbar);
-                          },
-                          icon: Icon(Icons.copy))),
+                                ScaffoldMessenger.of(context)
+                                  ..removeCurrentSnackBar()
+                                  ..showSnackBar(snackbar);
+                              },
+                              icon: Icon(Icons.copy))),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       );
