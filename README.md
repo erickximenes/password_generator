@@ -1,16 +1,61 @@
-# password_generator
+<div id="inicio"></div>
 
-A new Flutter project.
+## 📱🖥 Password Generator
 
-## Getting Started
+<img src="https://i.imgur.com/Ckdwrj6.jpg" height="300em"> <img src="https://i.imgur.com/xBnZRED.jpg" height="300em"> <img src="https://i.imgur.com/76yGx6o.jpg" height="300em">
+> Um sistema bem simples de geração de senha. Funciona em dektop Windows e dispositivos mobile. 
 
-This project is a starting point for a Flutter application.
+## 💻 Pré-requisitos
 
-A few resources to get you started if this is your first Flutter project:
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
+* Você instalou a versão mais recente de `flutter`
+* Você tem uma máquina `Windows`. O código não foi testado em `Linux` e `MacOS`.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## 🚀 Instalando password_generator
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Para instalar o password_generator, siga estas etapas:
+
+Linux e macOS:
+```
+flutter pub get
+```
+
+Windows:
+```
+flutter pub get
+```
+
+## ☕ Usando password_generator
+
+Para usar password_generator, siga estas etapas:
+
+Dispositivos móveis:
+```
+flutter run
+```
+
+Windows:
+```
+flutter run -d windows
+```
+
+
+## 🤝 Colaboradores
+
+Agradecemos à seguinte pessoa que contribuiu para este projeto:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do Erick no GitHub"/><br>
+        <sub>
+          <b>Erick Vasconcelos</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+
+[⬆ Voltar ao topo](#-me-lembre)<br>
