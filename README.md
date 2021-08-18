@@ -56,7 +56,8 @@ Agradecemos à seguinte pessoa que contribuiu para este projeto:
         <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do Erick no GitHub"/><br>
         <sub>
           <b>Erick Vasconcelos</b>
-        </sub>
+        </sub><br>
+        <a href="https://www.buymeacoffee.com/erickzaunlab" target="_blank"><img src="https://raw.githubusercontent.com/appcraftstudio/buymeacoffee/master/Images/snapshot-bmc-button.png" width="100px;"></a>
       </a>
     </td>
   </tr>
